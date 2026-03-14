@@ -47,3 +47,6 @@ dat_keywords <- bind_rows(all_access_keywords)
 dat_keywords_long <- dat_keywords |>
   mutate(additionalIndexing = str_remove(additionalIndexing, "freie Schlagwörter: ")) |>
   separate_rows(additionalIndexing, sep = ", ")
+
+saveRDS(dat_all, "data_raw/dat_all.rds")
+saveRDS(dat_keywords_long, "data_raw/dat_keywords_long.rds")
