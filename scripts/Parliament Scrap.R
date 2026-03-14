@@ -55,7 +55,8 @@ all_access_keywords <- list()
 #for loop to access keyword from 1 affair:
 for (i in 1:1) {
   id <- dat_all$id[i]
-  url <- paste0("https://ws-old.parlament.ch/affairs/", id)
+  url <- paste0("https://ws-old.parlament.ch/affairs/", id, "?format=xml")
   response <- GET(url)
 
+  doc <- content(response, as = "parsed", encoding = "UTF-8") #read content
 
