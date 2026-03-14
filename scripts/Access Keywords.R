@@ -1,4 +1,6 @@
 library(httr)
+library(tidyverse)
+library(xml2)
 
 #load data if necessary
 exists("dat_all")
@@ -17,3 +19,11 @@ for (i in 1:1) {
 
 doc_keywords <- content(response, as = "parsed", encoding = "UTF-8") #read content
 cat(as.character(doc_keywords)) #to see what content looks like
+
+#build tibble
+dat_detail <- tibble(
+  id                 = xml_text(xml_find_first(doc_keywords, "//id")),
+  shortId            = xml_text(xml_find_first(doc_keywords, "//shortId")),
+  title              = xml_text(xml_find_first(doc_keywords, "//title")),
+  additionalIndexing = xml_text(xml_find_first(doc_keywords, "//additionalIndexing"))
+)
