@@ -12,7 +12,7 @@ head(dat_all)
 all_access_keywords <- list()
 
 #for loop to access keyword from all affair:
-for (i in seq_len(nrow(dat_all))) {
+for (i in 1:5000) {
   id <- dat_all$id[i]
   url <- paste0("https://ws-old.parlament.ch/affairs/", id, "?format=xml")
 
