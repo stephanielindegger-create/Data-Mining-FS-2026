@@ -27,3 +27,14 @@ dat_detail <- tibble(
   title              = xml_text(xml_find_first(doc_keywords, "//title")),
   additionalIndexing = xml_text(xml_find_first(doc_keywords, "//additionalIndexing"))
 )
+
+all_access_keywords[[i]] <- dat_detail
+}
+
+# nach dem Loop zusammenfügen
+dat_keywords <- bind_rows(all_access_keywords)
+
+# change to long format to be able to access each single keyword
+dat_keywords_long <- dat_keywords |>
+  mutate(additionalIndexing = str_remove(additionalIndexing, "freie Schlagwörter: ")) |>
+  separate_rows(additionalIndexing, sep = ", ")
