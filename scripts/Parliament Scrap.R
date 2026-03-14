@@ -41,9 +41,17 @@ doc <- content(response, as = "parsed", encoding = "UTF-8")
   cat("Page", i, "fetched with", nrow(dat), "records\n")
 }
 
-# Combine all pages into a single tibble
+# Combine all pages into a single tibble, to access ID
 dat_all <- bind_rows(all_affairs)
 
 
 # save file
 saveRDS(dat_all, "all_affairs.rds")
+
+
+#list to store key words accessed through ids
+all_access_keywords <- list()
+
+#for loop to access key words
+
+
