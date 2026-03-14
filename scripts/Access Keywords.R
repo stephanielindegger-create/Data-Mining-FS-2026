@@ -12,24 +12,33 @@ head(dat_all)
 all_access_keywords <- list()
 
 #for loop to access keyword from all affair:
-for (i in seq_len(nrow(dat_all))) {
+for (i in 1:15) {
   id <- dat_all$id[i]
   url <- paste0("https://ws-old.parlament.ch/affairs/", id, "?format=xml")
-  response <- GET(url)
 
-doc_keywords <- content(response, as = "parsed", encoding = "UTF-8") #read content
-cat(as.character(doc_keywords)) #to see what content looks like
+  tryCatch({
+    response <- GET(url) #if an error occurs, the obtained data is kept and a restart not necessary
+    doc_keywords <- content(response, as = "parsed", encoding = "UTF-8") #read content
+    cat(as.character(doc_keywords)) #to see what content looks like
 
-#build tibble
-dat_detail <- tibble(
-  id                 = xml_text(xml_find_first(doc_keywords, "//id")),
-  shortId            = xml_text(xml_find_first(doc_keywords, "//shortId")),
-  title              = xml_text(xml_find_first(doc_keywords, "//title")),
-  additionalIndexing = xml_text(xml_find_first(doc_keywords, "//additionalIndexing"))
-)
+    #build tibble
+    dat_detail <- tibble(
+      id                 = xml_text(xml_find_first(doc_keywords, "//id")),
+      shortId            = xml_text(xml_find_first(doc_keywords, "//shortId")),
+      title              = xml_text(xml_find_first(doc_keywords, "//title")),
+      additionalIndexing = xml_text(xml_find_first(doc_keywords, "//additionalIndexing"))
+    )
 
-all_access_keywords[[i]] <- dat_detail
-}
+  all_access_keywords[[i]] <- dat_detail
+
+    }, error = function(e) {
+    cat("Error at i =", i, "ID:", id, "-", conditionMessage(e), "\n")
+    }) #identification of which affair caused an issue to assess later
+
+    Sys.sleep(0.1)
+  cat("Fetched", i, "of", nrow(dat_all), "\n")
+  } #putting the server to sleep to avoid being cut off
+
 
 # add all iterations
 dat_keywords <- bind_rows(all_access_keywords)
