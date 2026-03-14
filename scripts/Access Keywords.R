@@ -12,10 +12,10 @@ head(dat_all)
 all_access_keywords <- list()
 
 #for loop to access keyword from 1 affair:
-for (i in 1:1) {
+for (i in 1:250) {
   id <- dat_all$id[i]
   url <- paste0("https://ws-old.parlament.ch/affairs/", id, "?format=xml")
-  response <- GET(url) }
+  response <- GET(url)
 
 doc_keywords <- content(response, as = "parsed", encoding = "UTF-8") #read content
 cat(as.character(doc_keywords)) #to see what content looks like
@@ -31,7 +31,7 @@ dat_detail <- tibble(
 all_access_keywords[[i]] <- dat_detail
 }
 
-# nach dem Loop zusammenfügen
+# add all iterations
 dat_keywords <- bind_rows(all_access_keywords)
 
 # change to long format to be able to access each single keyword
