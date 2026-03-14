@@ -49,9 +49,13 @@ dat_all <- bind_rows(all_affairs)
 saveRDS(dat_all, "all_affairs.rds")
 
 
-#list to store key words accessed through ids
+#list to store keywords accessed through ids
 all_access_keywords <- list()
 
-#for loop to access key words
+#for loop to access keyword from 1 affair:
+for (i in 1:1) {
+  id <- dat_all$id[i]
+  url <- paste0("https://ws-old.parlament.ch/affairs/", id)
+  response <- GET(url)
 
 
