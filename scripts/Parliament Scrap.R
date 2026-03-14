@@ -58,5 +58,6 @@ for (i in 1:1) {
   url <- paste0("https://ws-old.parlament.ch/affairs/", id, "?format=xml")
   response <- GET(url)
 
-  doc <- content(response, as = "parsed", encoding = "UTF-8") #read content
+  doc_keywords <- content(response, as = "parsed", encoding = "UTF-8") #read content
+  cat(as.character(doc)) #to see what content looks like
 
