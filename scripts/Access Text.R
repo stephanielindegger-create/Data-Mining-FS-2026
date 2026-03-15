@@ -12,7 +12,7 @@ head(dat_all)
 all_access_texts <- list()
 
 #for loop to access text from affairs about democracy:
-for (i in 1:20) {
+for (i in seq_len(nrow(eval_keywords_democracy))) {
   id <- eval_keywords_democracy$id[i]
   url <- paste0("https://ws-old.parlament.ch/affairsummaries", id, "?format=xml")
 
