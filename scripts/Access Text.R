@@ -23,11 +23,11 @@ for (i in 1:1) {
 
     #build tibble
     dat_detail_text <- tibble(
-      id                 = xml_text(xml_find_first(doc_keywords, "//id")),
-      shortId            = xml_text(xml_find_first(doc_keywords, "//shortId")),
-      title              = xml_text(xml_find_first(doc_keywords, "//title")),
-      Description        = xml_text(xml_find_first(doc_keywords, "//sescription"))
-      InitialSituation   = xml_text(xml_find_first(doc_keywords, "//initialsituation"))
+      id                 = xml_text(xml_find_first(doc_text, "//id")),
+      shortId            = xml_text(xml_find_first(doc_text, "//shortId")),
+      title              = xml_text(xml_find_first(doc_text, "//title")),
+      Description        = xml_text(xml_find_first(doc_text, "//description")).
+      InitialSituation   = xml_text(xml_find_first(doc_text, "//initialsituation"))
     )
 
     all_access_texts[[i]] <- dat_detail_text
