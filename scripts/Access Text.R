@@ -12,7 +12,7 @@ head(dat_all)
 all_access_texts <- list()
 
 #for loop to access text from affairs about democracy:
-for (i in 1:1) {
+for (i in 1:20) {
   id <- eval_keywords_democracy$id[i]
   url <- paste0("https://ws-old.parlament.ch/affairsummaries", id, "?format=xml")
 
@@ -26,7 +26,7 @@ for (i in 1:1) {
       id                 = xml_text(xml_find_first(doc_text, "//id")),
       shortId            = xml_text(xml_find_first(doc_text, "//shortId")),
       title              = xml_text(xml_find_first(doc_text, "//title")),
-      Description        = xml_text(xml_find_first(doc_text, "//description")).
+      Description        = xml_text(xml_find_first(doc_text, "//description")),
       InitialSituation   = xml_text(xml_find_first(doc_text, "//initialsituation"))
     )
 
