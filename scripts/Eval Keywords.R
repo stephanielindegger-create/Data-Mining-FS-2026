@@ -8,6 +8,7 @@ all_keywords <- eval_keywords %>%
                 distinct(additionalIndexing) %>%
                 arrange(additionalIndexing)
 
+#identifying keywords to filter affairs accordingly
 keywords_democracy <- c(
   "Staatspolitik",
   "Volksrecht",
@@ -34,8 +35,8 @@ keywords_democracy <- c(
   "parlamentarische Untersuchung"
 )
 
-eval_keywords_democracy <- eval_keywords |>
-  filter(str_detect(additionalIndexing, paste(keywords_democracy, collapse = "|"))) |>
+eval_keywords_democracy <- eval_keywords %>%
+  filter(str_detect(additionalIndexing, paste(keywords_democracy, collapse = "|"))) %>%
   select(id, shortId, title, additionalIndexing)
 
 saveRDS(eval_keywords_democracy, "data_preprocessed/eval_keywords_democracy.rds")
