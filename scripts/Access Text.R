@@ -18,8 +18,8 @@ for (i in 1:1) {
 
   tryCatch({
     response <- GET(url) #if an error occurs, the obtained data is kept and a restart not necessary
-    doc_keywords <- content(response, as = "parsed", encoding = "UTF-8") #read content
-    cat(as.character(doc_keywords)) #to see what content looks like
+    doc_text <- content(response, as = "parsed", encoding = "UTF-8") #read content
+    cat(as.character(doc_text)) #to see what content looks like
 
     #build tibble
     dat_detail_text <- tibble(
