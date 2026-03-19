@@ -35,7 +35,8 @@ classify_affair <- function(title, additionalIndexing) {
     "Title: ", title, "\n",
     "additionalIndexing: ", additionalIndexing, "\n\n",
     "Is this affair addressing any security issues? ",
-    "Answer with: Yes or No, if yes, identify the corresponding security issue"
+    "Answer ONLY with: 'No' OR 'Yes: [security issue]'\n",
+    "No explanations, no markdown, no additional text."
     )
   ask_claude(prompt)
 }
