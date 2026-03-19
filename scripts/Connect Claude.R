@@ -42,17 +42,19 @@ classify_affair <- function(title, additionalIndexing) {
 }
 
 
-#test for 20 affairs
-democracy_security_affairs <- map2_chr(
-  democracy_affairs$title[1:20],
-  democracy_affairs$additionalIndexing[1:20],
+#for affairs
+classification_results <- map2_chr(
+  democracy_affairs$title,
+  democracy_affairs$additionalIndexing,
   classify_affair
 )
 
 democracy_security_affairs <- tibble(
   title                 = democracy_affairs$title,
-  additionalIndexierung = democracy_affairs$additionalIndexing
+  additionalIndexierung = democracy_affairs$additionalIndexing,
   id                    = democracy_affairs$id,
+  classification        = classification_results
+  ) %>%
   mutate(
     answer         = if_else(str_starts(classification, "Yes"), "Yes", "No"),
     security_issue = if_else(str_starts(classification, "Yes"),
@@ -60,5 +62,5 @@ democracy_security_affairs <- tibble(
                              NA_character_)
   )
 
+saveRDS(democracy_security_affairs, "data_preprocessed/democracy_security_affairs.rds")
 
-)
