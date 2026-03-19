@@ -1,10 +1,10 @@
 library(httr)
 library(jsonlite)
 
+democracy_affairs <- readRDS("data_preprocessed/eval_keywords_democracy.rds")
+
 # API Key setzen
 api_key <- Sys.getenv("ANTHROPIC_API_KEY")
-
-nchar(api_key) > 0
 
 # Funktion um Claude zu fragen
 ask_claude <- function(prompt) {
@@ -26,4 +26,19 @@ ask_claude <- function(prompt) {
 
   content(response)$content[[1]]$text
 }
+
+#setting up instructions for Claude
+classify_affair <- function(title, additionalIndexing) {
+    prompt <- paste0(
+    "Classification of parliamentary affairs.\n",
+    "Title: ", title, "\n",
+    "additionalIndexing: ", additionalIndexing, "\n\n",
+    "Is this affair addressing any security issues? ",
+    "Answer with: Yes or No, if yes, identify the corresponding security issue"
+    )
+  ask_claude(prompt)
+}
+
+#test for 1 affair
+classify_affair(democracy_affairs$title[1], democracy_affairs$additionalIndexing[1])
 
