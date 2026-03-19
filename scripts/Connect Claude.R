@@ -39,6 +39,10 @@ classify_affair <- function(title, additionalIndexing) {
   ask_claude(prompt)
 }
 
-#test for 1 affair
-classify_affair(democracy_affairs$title[1], democracy_affairs$additionalIndexing[1])
 
+#test for 5 affairs
+map2_chr(
+  democracy_affairs$title[1:5],
+  democracy_affairs$additionalIndexing[1:5],
+  classify_affair
+)
