@@ -42,9 +42,9 @@ classify_affair <- function(title, additionalIndexing) {
 }
 
 
-#test for 5 affairs
+#test for 20 affairs
 map2_chr(
-  democracy_affairs$title[1:5],
-  democracy_affairs$additionalIndexing[1:5],
+  democracy_affairs$title[1:20],
+  democracy_affairs$additionalIndexing[1:20],
   classify_affair
 )
