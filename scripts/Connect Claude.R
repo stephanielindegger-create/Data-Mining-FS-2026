@@ -43,8 +43,22 @@ classify_affair <- function(title, additionalIndexing) {
 
 
 #test for 20 affairs
-map2_chr(
+democracy_security_affairs <- map2_chr(
   democracy_affairs$title[1:20],
   democracy_affairs$additionalIndexing[1:20],
   classify_affair
+)
+
+democracy_security_affairs <- tibble(
+  title                 = democracy_affairs$title,
+  additionalIndexierung = democracy_affairs$additionalIndexing
+  id                    = democracy_affairs$id,
+  mutate(
+    answer         = if_else(str_starts(classification, "Yes"), "Yes", "No"),
+    security_issue = if_else(str_starts(classification, "Yes"),
+                             str_remove(classification, "Yes: "),
+                             NA_character_)
+  )
+
+
 )
