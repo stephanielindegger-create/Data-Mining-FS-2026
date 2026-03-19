@@ -17,7 +17,7 @@ ask_claude <- function(prompt) {
     ),
     body = toJSON(list(
       model = "claude-haiku-4-5-20251001",
-      max_tokens = 1024,
+      max_tokens = 50,
       messages = list(
         list(role = "user", content = prompt)
       )
@@ -27,6 +27,7 @@ ask_claude <- function(prompt) {
   content(response)$content[[1]]$text
 }
 
+library(tidyverse)
 #setting up instructions for Claude
 classify_affair <- function(title, additionalIndexing) {
     prompt <- paste0(
