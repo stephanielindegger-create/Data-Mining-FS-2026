@@ -38,7 +38,17 @@ classify_affair <- function(title, additionalIndexing) {
     "Answer ONLY with: 'No' OR 'Yes: [security issue]'\n",
     "No explanations, no markdown, no additional text."
     )
-  ask_claude(prompt)
+    result <- tryCatch({
+      ask_claude(prompt)
+    }, error = function(e) {
+      cat("Error at title:", title, "\n")
+      NA_character_  # gibt NA zurück statt abzubrechen
+    })
+
+    # Falls leere Antwort
+    if (length(result) == 0) return(NA_character_)
+
+    result
 }
 
 
