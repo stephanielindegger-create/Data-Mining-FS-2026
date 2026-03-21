@@ -8,5 +8,10 @@ bar_chart_input <- chart_data$classification %>%
   count(answer)
 
 #bar chart set up
-ggplot(bar_chart_input, aes(x = answer, y = n)) +
+ggplot(bar_chart_input, aes(x = answer, y = n, fill = answer)) +
   geom_bar(stat = "identity")
+  labs(
+  title = "Security Issues in Democratic Affairs of the Swiss Parliament",
+  x     = "Classification",
+  y     = "Number of Affairs"
+)
