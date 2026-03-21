@@ -33,5 +33,6 @@ labs(
   x     = "Number of Affairs",
   y     = "Security Issue"
 )
-theme_minimal()
-theme(legend.position = "none")
+theme_minimal() +
+theme(legend.position = "none") +
+guides(fill = "none")
