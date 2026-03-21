@@ -32,7 +32,6 @@ labs(
   title = "Security Issues in Democratic Affairs of the Swiss Parliament",
   x     = "Number of Affairs",
   y     = "Security Issue"
-)
+) +
 theme_minimal() +
-theme(legend.position = "none") +
-guides(fill = "none")
+theme(legend.position = "none")
