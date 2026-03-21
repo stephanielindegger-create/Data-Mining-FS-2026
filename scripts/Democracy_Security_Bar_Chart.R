@@ -17,7 +17,7 @@ ggplot(bar_chart_input, aes(x = answer, y = n, fill = answer)) +
     "NA"  = "grey"
   )) +
   labs(
-  title = "Security Issues in Democratic Affairs of the Swiss Parliament",
+  title = "Number of Security Issues in Democratic Affairs of the Swiss Parliament",
   x     = "Classification",
   y     = "Number of Affairs"
 )

@@ -23,7 +23,13 @@ democracy_security_category <- chart_data_2 %>%
 democracy_security_horizontal_bar_chart <- democracy_security_category %>%
   filter(answer == "Yes") %>%
   count(security_category, sort = TRUE)
+  order(decreasing=FALSE)
 
 #horizontal bar chart set up
 ggplot(democracy_security_horizontal_bar_chart, aes(x = n, y = security_category, fill = security_category)) +
     geom_bar(stat = "identity")
+labs(
+  title = "Security Issues in Democratic Affairs of the Swiss Parliament",
+  x     = "Number of Affairs",
+  y     = "Security Issue"
+)
