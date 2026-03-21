@@ -22,8 +22,8 @@ democracy_security_category <- chart_data_2 %>%
 #filter out No and NA
 democracy_security_horizontal_bar_chart <- democracy_security_category %>%
   filter(answer == "Yes") %>%
-  count(security_category, sort = TRUE)
-  order(decreasing=FALSE)
+  count(security_category, sort = TRUE)  %>%
+  arrange(desc(n))
 
 #horizontal bar chart set up
 ggplot(democracy_security_horizontal_bar_chart, aes(x = n, y = security_category, fill = security_category)) +
