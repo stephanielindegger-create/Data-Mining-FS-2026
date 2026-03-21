@@ -26,10 +26,12 @@ democracy_security_horizontal_bar_chart <- democracy_security_category %>%
 
 
 #horizontal bar chart set up
-ggplot(democracy_security_horizontal_bar_chart, aes(x = n, y = security_category, fill = security_category)) +
+ggplot(democracy_security_horizontal_bar_chart, aes(x = n, y = reorder(security_category, n), fill = security_category)) +
     geom_bar(stat = "identity") +
 labs(
   title = "Security Issues in Democratic Affairs of the Swiss Parliament",
   x     = "Number of Affairs",
   y     = "Security Issue"
 )
+theme_minimal()
+theme(legend.position = "none")
