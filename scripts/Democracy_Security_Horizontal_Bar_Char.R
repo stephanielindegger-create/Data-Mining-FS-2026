@@ -7,7 +7,7 @@ chart_data_2 <- readRDS("data_preprocessed/democracy_security_affairs.rds")
 unique(chart_data_2$security_issue)
 
 #group affairs according to theme
-democracy_security_affairs <- democracy_security_affairs %>%
+democracy_security_affairs <- chart_data_2 %>%
   mutate(security_category = case_when(
     str_detect(security_issue, regex("migr|Zuwanderung|Ausländer|border|immigration", ignore_case = TRUE)) ~ "Migration",
     str_detect(security_issue, regex("innere Sicherheit|Staatsschutz|Telefon|Drogen|polizei|public order", ignore_case = TRUE)) ~ "Internal Security",
