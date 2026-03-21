@@ -2,8 +2,19 @@ library(ggplot2)
 
 chart_data_2 <- readRDS("data_preprocessed/democracy_security_affairs.rds")
 
-#prep input: Yes, No, NA (because may affairs rendered NA)
-horizontal_chart_input <- chart_data_2 %>%
-  mutate(answer = replace_na(answer, "NA")) %>%
-  mutate(answer = factor(answer, levels = c("No", "Yes", "NA"))) %>%
-  count(answer)
+
+#understanding results
+unique(chart_data_2$security_issue)
+
+#group affairs according to theme
+democracy_security_affairs <- democracy_security_affairs %>%
+  mutate(security_category = case_when(
+    str_detect(security_issue, regex("migr|Zuwanderung|Ausländer|border|immigration", ignore_case = TRUE)) ~ "Migration",
+    str_detect(security_issue, regex("innere Sicherheit|Staatsschutz|Telefon|Drogen|polizei|public order", ignore_case = TRUE)) ~ "Internal Security",
+    str_detect(security_issue, regex("NATO|militar|international|nuclear|Waffen|Russia", ignore_case = TRUE)) ~ "International Security / Military",
+    str_detect(security_issue, regex("corrupt|financial|banking|pension|procurement", ignore_case = TRUE)) ~ "Corruption / Finance",
+    str_detect(security_issue, regex("parliament|investigation|accountability|referendum|control", ignore_case = TRUE)) ~ "Parliamentary Control",
+    str_detect(security_issue, regex("Rassen|Antisem|social|gesellschaft", ignore_case = TRUE)) ~ "Social Security",
+    answer == "No" ~ "No Security Issue",
+    TRUE ~ NA_character_
+  ))
