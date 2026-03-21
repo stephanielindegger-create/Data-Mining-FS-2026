@@ -20,7 +20,7 @@ democracy_security_category <- chart_data_2 %>%
   ))
 
 #filter out No and NA
-democracy_security_affairs <- democracy_security_category %>%
+democracy_security_horizontal_bar_chart <- democracy_security_category %>%
   filter(answer == "Yes") %>%
   count(security_category, sort = TRUE)
 
