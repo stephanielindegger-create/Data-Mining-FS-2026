@@ -15,3 +15,4 @@ ggplot(bar_chart_input, aes(x = answer, y = n, fill = answer)) +
   x     = "Classification",
   y     = "Number of Affairs"
 )
+  theme_minimal()
