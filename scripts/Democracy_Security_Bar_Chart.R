@@ -1,5 +1,4 @@
-
-
+library(ggplot2)
 
 chart_data <- readRDS("data_preprocessed/democracy_security_affairs.rds")
 
@@ -7,3 +6,7 @@ chart_data <- readRDS("data_preprocessed/democracy_security_affairs.rds")
 bar_chart_input <- chart_data$classification %>%
   mutate(answer = replace_na(answer, "NA")) %>%
   count(answer)
+
+#bar chart set up
+ggplot(bar_chart_input, aes(x = answer, y = n)) +
+  geom_bar(stat = "identity")
