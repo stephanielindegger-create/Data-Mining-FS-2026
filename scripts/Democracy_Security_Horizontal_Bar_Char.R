@@ -25,4 +25,5 @@ democracy_security_horizontal_bar_chart <- democracy_security_category %>%
   count(security_category, sort = TRUE)
 
 #horizontal bar chart set up
-ggplot(bar_chart_input, aes(x = n, y = answer, fill = answer)) +
+ggplot(democracy_security_horizontal_bar_chart, aes(x = n, y = answer, fill = answer)) +
+    geom_bar(stat = "identity")
