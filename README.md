@@ -27,7 +27,7 @@ How frequent are security security issues regarding Swiss democracy discussed in
 
 Parlament.ch - Curia Visa : https://ws-old.parlament.ch/
 
-THe data is firstly accessed by scraping the ID of all available affairs and connecting them to their according keywords. Originally, the idea was to draw the affair text from the identified affairs and evaluated, after the keywords are assessed
+The data is firstly accessed by scraping the ID of all available affairs and connecting them to their according keywords. Originally, the idea was to draw the affair text from the identified affairs and evaluated, after the keywords are assessed
 
 However, do to limitations of this research, the focus is on the title and keywords of 5'000 affairs rather than assessing the text. 
 
