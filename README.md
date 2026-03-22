@@ -20,7 +20,8 @@ This specific project focuses of parliamentary affairs of the Swiss parliament. 
 ## Research Question
 
 What are the current security issues regarding Swiss democracy discussed in parliament?
-How frequent are security security issues regarding Swiss democracy discussed in parliament?
+
+How frequent are security issues regarding Swiss democracy discussed in parliament?
 
 
 ## Data Source
@@ -35,10 +36,13 @@ However, do to limitations of this research, the focus is on the title and keywo
 ## Repository Structure
 
 /data_preprocessed     output from working with raw data sets
+
 /data_raw              dataset drawn from website
+
 /scripts               scripts used to collect/process data
 
 README.md               project description
+
 .gitignore              
 
 
