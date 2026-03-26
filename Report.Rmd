@@ -9,11 +9,11 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-#Data Mining for the Social Sciences using R Term: Spring 2026 
+# Data Mining for the Social Sciences using R Term: Spring 2026 
 
 This report is divided into two parts. First, it will describe the original academic outline of the project and idea. Additionally, as issues were encountered during the project work, it will also explain the shift of the academic direction, as the original focus of this project was data mining rather than academic research and data gathering. Secondly, this report describes the project work, the challenges and limitations encountered during the progress. 
 
-##Introduction of the Project 
+## Introduction of the Project 
 The idea to assess security issues in the election or voting process started when I attended the Dutch general elections in October 2025 as an international observer working for an NGO. I started to consider how certain security issues are addressed in Switzerland, as from my perspective, voting by letter is a very popular method. However, the security of democracy is also threatened through various other aspects. One of which is modern technology, the spread of misinformation and the manipulation of public opinion (Inter-Parliamentary Union, 2022). In particular the use of social media is a driver of this development, with the most prominent example being Russia’s interference with the 2016 US elections (McKay and Tenove, 2020). 
 
 This resulted in the following research questions: 
@@ -28,15 +28,15 @@ RQ3: What are the security issues regarding Swiss democracy discussed in parliam
 
 To answer the research questions in detail, more literature would need to be consulted as well as more data gathered with a sturdier process. These issues are addressed in the second part. However, in short, out of the parliamentary affairs considered, less than 5% of affairs included issues on democracy. Additionally, of these affairs about 12% addressed security issues namely, international security/military, migration, parliamentary control, finance/corruption, and social security. However, this analysis was conducted on a random sample size with no methodological considerations and are thus, very limited in their meaning. 
 
-##Project Progress 
+## Project Progress 
 The second part of this report assesses the data sources, challenges encountered and the limitations of this project.  
 
-###Data
+### Data
 The original idea to access the required data was to use the Swiss parliament’s website as well as the Swiss federal court’s website to assess which security issues regarding election and voting processes have been discussed and if there is a judicial ruling. However, the scope was narrowed down due to time limitations and difficulties encountered when accessing the parliament’s website. 
 
 The data source used for this project is https://ws-old.parlament.ch/ . It is noteworthy that this webpage states that it is the “old” version. However, this Open Data API is provided on the official parliament’s website www.parlament.ch, thus it is assumed that web scraping should be done there.  
 
-###Scraping
+### Scraping
 The original idea was to evaluate which affairs address election/voting aspects and then use AI to evaluate potential security issues. To narrow down the affairs considered, affairs were assessed if they addressed democracy issues, in order to have a broader base. 
 
 Due to the set up of the API, the scraping process included the following steps: 
@@ -51,7 +51,7 @@ As a side note, the parliamentary affairs visible on the website did not include
 
 This was the original idea on how to scrape the website. However, as the 239 affairs did not render any text, due to error 404 encountered, the project needed to be adapted. Rather than using AI to text evaluate the 239 affair’s text, AI was used to evaluate security issues based on the title and provided keywords. This allowed the findings provided in the first section. 
 
-###Challenges and Limitations 
+### Challenges and Limitations 
 As mentioned before, this project did not render the expected results and thus, needed major adaptations. Thus, the challenges encountered go hand in hand with the limitations of this project. Here are the key issues: 
 
 1. Firstly, the project had to be restarted, because of a misunderstanding regarding the website’s API key. The website did not require an API key, but this was not clear from the beginning. Because it did not need an API key, I never received one. This led to the creation of an artificial API key, which ended up being pushed on the Github respo. As publishing API keys (even fake one’s) is not good coding practise as it is an issue with data privacy, the decision was made to delete the first Github repo and restart. The work conducted until that point was copy-pasted to the new Github respo meaning that it does not allow to show any comments on how the first steps were built. However, this issue helped me to adequately handle the API key to connect the LLM Claude to the project later. Thus, lessons learned from the previous mistake were directly applied. 
@@ -73,17 +73,17 @@ This also allows a reflection of the scalability and reproducibility of the code
 
 The LLM rendered security issues, some of them were in English and some of them in German. Additionally, the same keyword issue as before, with the random assigning of words arose. Thus, summarising them cohesively was required. If this assignment did not focus on data mining but the data obtained, it would have been sensible to assess security themes in the literature review and then apply them directly to the affairs, in order to receive a more sensible outcome. However, this also shows the limitations of LLMs working methodologically. Of course, the prompt was kept rather generic, which was interesting to see, how LLM ‘s handles these situations. 
 
-##Conclusion
+## Conclusion
 To conclude, even though the project rendered some data, to adequately answer the research question several steps would need to be taken. Firstly, a sturdy literature review is required to ground the keywords, evaluation process and findings in theory. Additionally, to ensure stability of the code, additional safety features to ensure smooths scraping such as automatic saving of scraped data and the continuity of the scraping process are required. This also increased the time intensity of the project but does not solve the methodological issues that arose with the keyword assignment of the affairs.
 
-##LLM Disclaimer 
+## LLM Disclaimer 
 LLMs (namely Claude, Perplexity, Chatgpt) were used in this project. LLMs have been used to generate and debug code. Also, rather than trying out code in RStudio directly to see what happens, code was suggested directly to LLM to generate a base of which to work of. The aim discussion solutions with the LLM was to avoid trying bugged code on an external website, without fully understanding what is happening but also to drive the ideas rather than relying on LLMs input on problem solving.  
 
 Additionally, LLMs were used to as a guide on how to use Github (e.g. how to create an issue), as an efficient research tool (e.g. to evaluate which responsibilities the federal court carries compared to the federal administrative court), to evaluate the list of keywords, and to verify privacy settings and to try to avoid pushing sensitive information to Github. 
 
 Generally, LLMs were used responsibly, with the aim of supporting efficient learning.  
 
- ##Bibliography
+ ## Bibliography
  Inter-Parliamentary Union. (2022).*How to mitigate these five threats to democracy.* [online] Available at: https://www.ipu.org/news/news-in-brief/2022-09/how-mitigate-these-five-threats-democracy. 
 
 McKay, S. and Tenove, C. (2020). Disinformation as a Threat to Deliberative Democracy.*Political Research Quarterly,* 74(3), p.106591292093814. doi:https://doi.org/10.1177/1065912920938143. 
