@@ -83,4 +83,9 @@ Additionally, LLMs were used to as a guide on how to use Github (e.g. how to cre
 
 Generally, LLMs were used responsibly, with the aim of supporting efficient learning.  
 
- 
+ ##Bibliography
+ Inter-Parliamentary Union. (2022). How to mitigate these five threats to democracy. [online] Available at: https://www.ipu.org/news/news-in-brief/2022-09/how-mitigate-these-five-threats-democracy. 
+
+McKay, S. and Tenove, C. (2020). Disinformation as a Threat to Deliberative Democracy. Political Research Quarterly, 74(3), p.106591292093814. doi:https://doi.org/10.1177/1065912920938143. 
+
+‌‌Parlament.ch. (2024). Initiatives parlementaires. Délais d’examen - Web Services of the Swiss Parliament. [online] Available at: https://ws-old.parlament.ch/affairs/19890251 [Accessed 22 Mar. 2026]. 
