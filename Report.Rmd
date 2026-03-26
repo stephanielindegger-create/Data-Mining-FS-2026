@@ -9,22 +9,23 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown
+#Data Mining for the Social Sciences using R Term: Spring 2026 
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+This report is divided into two parts. First, it will describe the original academic outline of the project and idea. Additionally, as issues were encountered during the project work, it will also explain the shift of the academic direction, as the original focus of this project was data mining rather than academic research and data gathering. Secondly, this report describes the project work, the challenges and limitations encountered during the progress. 
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+##Introduction of the Project 
+The idea to assess security issues in the election or voting process started when I attended the Dutch general elections in October 2025 as an international observer working for an NGO. I started to consider how certain security issues are addressed in Switzerland, as from my perspective, voting by letter is a very popular method. However, the security of democracy is also threatened through various other aspects. One of which is modern technology, the spread of misinformation and the manipulation of public opinion (Inter-Parliamentary Union, 2022). In particular the use of social media is a driver of this development, with the most prominent example being Russia’s interference with the 2016 US elections (McKay and Tenove, 2020). 
 
-```{r cars}
-summary(cars)
-```
+This resulted in the following research questions: 
 
-## Including Plots
+RQ1: How has discourse about election/procedures evolved? 
 
-You can also embed plots, for example:
+RQ2: How are threats to democracy (e.g. foreign interference, disinformation campaign, inclusiveness to election/voting processes) addressed? 
 
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
+Due to data gathering issues, which are explained in detail in the second part of this report, the research questions have been adapted and kept rather broad. 
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+RQ3: What are the security issues regarding Swiss democracy discussed in parliament? RQ4: How frequent are security issues regarding Swiss democracy discussed in parliament? 
+
+To answer the research questions in detail, more literature would need to be consulted as well as more data gathered with a sturdier process. These issues are addressed in the second part. However, in short, out of the parliamentary affairs considered, less than 5% of affairs included issues on democracy. Additionally, of these affairs about 12% addressed security issues namely, international security/military, migration, parliamentary control, finance/corruption, and social security. However, this analysis was conducted on a random sample size with no methodological considerations and are thus, very limited in their meaning. 
+
+##Project Progress 
