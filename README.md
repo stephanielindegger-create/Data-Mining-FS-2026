@@ -1,4 +1,4 @@
-# Data Mining Project Template
+# Data Mining Project
 
 This repository contains the code for a small data mining project developed as part of the course:
 
@@ -6,7 +6,7 @@ This repository contains the code for a small data mining project developed as p
 
 University of Lucerne
 
-Student Name  
+Lindegger S.
 Course: Data Mining for the Social Sciences using R
 Term: Spring 2026
 
@@ -14,38 +14,36 @@ Term: Spring 2026
 
 The goal of this project is to collect and analyze data from an online source (API or web scraping) in order to answer a research question relevant to political or social science.
 
-The project should demonstrate:
-
-- Identification of a suitable data source
-- Automated data collection (API or scraping)
-- Data cleaning and preparation
-- Reproducible analysis
+This specific project focuses of parliamentary affairs of the Swiss parliament. The main aim is to firstly, evaluate affairs that address democracy. Secondly, it aims to evaluate which security issues regarding democracy are addressed in parliamentary affairs. As a limitation of this course, the project only evaluates 5'000 affairs. Additionally, AI was used to categorise affairs regarding democracy as well as an analysis of the title and keywords regarding security issues.
 
 
 ## Research Question
 
-*(Replace with your own question)*
+What are the current security issues regarding Swiss democracy discussed in parliament?
 
-Example:
-- How frequently do political speeches contain populist rhetoric?
+How frequent are security issues regarding Swiss democracy discussed in parliament?
 
 
 ## Data Source
 
-Describe the data source here.
+Parlament.ch - Curia Visa : https://ws-old.parlament.ch/
 
-Example:
+The data is firstly accessed by scraping the ID of all available affairs and connecting them to their according keywords. Originally, the idea was to draw the affair text from the identified affairs and evaluated, after the keywords are assessed
 
-- API: https://example-api.com
-- Documentation: https://example-api.com/docs
-- Access method: HTTP GET requests
+However, do to limitations of this research, the focus is on the title and keywords of 5'000 affairs rather than assessing the text. 
 
 
 ## Repository Structure
 
-/code     scripts used to collect/process data
-/data     output datasets (not tracked/pushed by git)
-README.md   project description
+/data_preprocessed     output from working with raw data sets
+
+/data_raw              dataset drawn from website
+
+/scripts               scripts used to collect/process data
+
+README.md               project description
+
+.gitignore              
 
 
 ## Reproducibility
@@ -54,29 +52,8 @@ To reproduce this project:
 
 1. Clone the repository
 2. Install required R packages
-3. Run the scripts in the `code/` folder
+3. Run the scripts in the `script/ folder
+4. Connect R Studio to Claude API for evaluation
 
 All data should be generated automatically by the scripts.
 
-
-## Good Practices
-
-Please follow these guidelines:
-
-- Do **not upload raw datasets** to GitHub.
-- Store **API keys outside the repository** (e.g., environment variables).
-- Write scripts that run **from start to finish**.
-- Commit your work **frequently**.
-- Use **clear commit messages**.
-
-Example commit messages:
-added API request
-cleaned dataset structure
-added visualization
-fixed JSON parsing
-
-
-## Notes
-
-Large datasets should not be pushed to GitHub.  
-If necessary, provide instructions for downloading the data instead.
