@@ -69,7 +69,7 @@ Here of course a working solution might have been to use the affair ID’s to di
 
 This also allows a reflection of the scalability and reproducibility of the code provided in this project. It clearly demonstrated the limits of amount of data scraped. The first trial of accessing all title/keywords crashed around 9’700 affairs. Thus, this leaved the conclusion that the code is reproducible and functioning, but to scale it to higher numbers, other coding-features, as mentioned above are required. 
 
-5. The last step in the evaluation process of assessing the affairs regarding security issues was to analyse the title and keywords obtained. Here, the data input was very limited and did not allow a full understanding of what an affair was addressing, with titles like \“Bericht der Kommission vom 12.12.1990” (Parlament.ch, 2024, losely translated to “Report of the commission”) just to name one example. Thus, again an LLM (Claude) was consulted in analysing the security issues of the 239 affairs addressing democracy. At this point, the research focused switched to simply assess security issues in affairs addressing democracy rather than additionally narrowing down the data base to election and voting process, as the given information was too scarce.  
+5. The last step in the evaluation process of assessing the affairs regarding security issues was to analyse the title and keywords obtained. Here, the data input was very limited and did not allow a full understanding of what an affair was addressing, with titles like “Bericht der Kommission vom 12.12.1990” (Parlament.ch, 2024, losely translated to “Report of the commission”) just to name one example. Thus, again an LLM (Claude) was consulted in analysing the security issues of the 239 affairs addressing democracy. At this point, the research focused switched to simply assess security issues in affairs addressing democracy rather than additionally narrowing down the data base to election and voting process, as the given information was too scarce.  
 
 The LLM rendered security issues, some of them were in English and some of them in German. Additionally, the same keyword issue as before, with the random assigning of words arose. Thus, summarising them cohesively was required. If this assignment did not focus on data mining but the data obtained, it would have been sensible to assess security themes in the literature review and then apply them directly to the affairs, in order to receive a more sensible outcome. However, this also shows the limitations of LLMs working methodologically. Of course, the prompt was kept rather generic, which was interesting to see, how LLM ‘s handles these situations. 
 
@@ -84,8 +84,8 @@ Additionally, LLMs were used to as a guide on how to use Github (e.g. how to cre
 Generally, LLMs were used responsibly, with the aim of supporting efficient learning.  
 
  ##Bibliography
- Inter-Parliamentary Union. (2022). How to mitigate these five threats to democracy. [online] Available at: https://www.ipu.org/news/news-in-brief/2022-09/how-mitigate-these-five-threats-democracy. 
+ Inter-Parliamentary Union. (2022).*How to mitigate these five threats to democracy.* [online] Available at: https://www.ipu.org/news/news-in-brief/2022-09/how-mitigate-these-five-threats-democracy. 
 
-McKay, S. and Tenove, C. (2020). Disinformation as a Threat to Deliberative Democracy. Political Research Quarterly, 74(3), p.106591292093814. doi:https://doi.org/10.1177/1065912920938143. 
+McKay, S. and Tenove, C. (2020). Disinformation as a Threat to Deliberative Democracy.*Political Research Quarterly,* 74(3), p.106591292093814. doi:https://doi.org/10.1177/1065912920938143. 
 
-‌‌Parlament.ch. (2024). Initiatives parlementaires. Délais d’examen - Web Services of the Swiss Parliament. [online] Available at: https://ws-old.parlament.ch/affairs/19890251 [Accessed 22 Mar. 2026]. 
+‌‌Parlament.ch. (2024).*Initiatives parlementaires. Délais d’examen - Web Services of the Swiss Parliament.* [online] Available at: https://ws-old.parlament.ch/affairs/19890251 [Accessed 22 Mar. 2026]. 
