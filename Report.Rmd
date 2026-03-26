@@ -72,3 +72,15 @@ This also allows a reflection of the scalability and reproducibility of the code
 5. The last step in the evaluation process of assessing the affairs regarding security issues was to analyse the title and keywords obtained. Here, the data input was very limited and did not allow a full understanding of what an affair was addressing, with titles like \“Bericht der Kommission vom 12.12.1990” (Parlament.ch, 2024, losely translated to “Report of the commission”) just to name one example. Thus, again an LLM (Claude) was consulted in analysing the security issues of the 239 affairs addressing democracy. At this point, the research focused switched to simply assess security issues in affairs addressing democracy rather than additionally narrowing down the data base to election and voting process, as the given information was too scarce.  
 
 The LLM rendered security issues, some of them were in English and some of them in German. Additionally, the same keyword issue as before, with the random assigning of words arose. Thus, summarising them cohesively was required. If this assignment did not focus on data mining but the data obtained, it would have been sensible to assess security themes in the literature review and then apply them directly to the affairs, in order to receive a more sensible outcome. However, this also shows the limitations of LLMs working methodologically. Of course, the prompt was kept rather generic, which was interesting to see, how LLM ‘s handles these situations. 
+
+##Conclusion
+To conclude, even though the project rendered some data, to adequately answer the research question several steps would need to be taken. Firstly, a sturdy literature review is required to ground the keywords, evaluation process and findings in theory. Additionally, to ensure stability of the code, additional safety features to ensure smooths scraping such as automatic saving of scraped data and the continuity of the scraping process are required. This also increased the time intensity of the project but does not solve the methodological issues that arose with the keyword assignment of the affairs.
+
+##LLM Disclaimer 
+LLMs (namely Claude, Perplexity, Chatgpt) were used in this project. LLMs have been used to generate and debug code. Also, rather than trying out code in RStudio directly to see what happens, code was suggested directly to LLM to generate a base of which to work of. The aim discussion solutions with the LLM was to avoid trying bugged code on an external website, without fully understanding what is happening but also to drive the ideas rather than relying on LLMs input on problem solving.  
+
+Additionally, LLMs were used to as a guide on how to use Github (e.g. how to create an issue), as an efficient research tool (e.g. to evaluate which responsibilities the federal court carries compared to the federal administrative court), to evaluate the list of keywords, and to verify privacy settings and to try to avoid pushing sensitive information to Github. 
+
+Generally, LLMs were used responsibly, with the aim of supporting efficient learning.  
+
+ 
